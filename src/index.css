@@ -1,0 +1,35 @@
+.shade {
+    display: flex;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: aliceblue;
+    width: 70vw;
+}
+
+/* Media Screens */
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+    }
+    #content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    #left, #right {
+        display: flex;
+        flex-direction: column;
+       width: 100%;
+    }
+    input{
+        width: 8rem;
+    }
+    .input-group{
+        display: flex;
+    }
+}

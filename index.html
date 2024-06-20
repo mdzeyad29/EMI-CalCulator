@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="./src/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div onload="submit()"> 
+        <!-- //navbar -->
+        <nav class="d-flex justify-content-between bg-dark p-2 navbar navbar-toggler bg-dark "  data-bs-target="menu" data-bs-toggle="collapse">
+            <div class="text-white p-2">
+                <strong>EMI CALCULATOR</strong>
+            </div>
+            <div class="text-white" id="menu">
+                <span class="p-2">Home</span>
+                <span class="p-2">How it Works</span>
+                <span class="p-2">Features</span>
+            </div>
+        </nav>
+        <!-- main section -->
+        <main class="shade pt-2 d-flex flex-column" style="height: 100vh">
+            <div class="card p-3 d-flex flex-column gap-3 bg-secondary justify-content-center">
+                <div id="card-title" class="d-flex justify-content-center">
+                    <strong class="text-uppercase fs-3 fw-bold text-white">Personal Loan</strong>
+                </div>
+                <div class="d-flex gap-5 flex-wrap" id="content">
+                    <div id="left" class="shadow-lg p-3 bg-body rounded ">
+                        <div class="w-100">
+                            <div class="input-group w-100">
+                                <label class="input-group-text bg-danger text-white">Loan Amount</label>
+                                <span class="input-group-text"><i class="bi bi-currency-rupee"></i></span>
+                                <input type="number" id="loan">
+                            </div>
+                            <div class="slider">
+                                <input type="range" min="1" max="1000000" class="w-75" id="value1">
+                            </div>
+                        </div>
+                        <div class="mb-3 w-100">
+                            <div class="input-group">
+                                <label class="input-group-text bg-danger text-white">Interest Rate</label>
+                                <span class="input-group-text"><i class="bi bi-currency-rupee"></i></span>
+                                <input type="number" id="Interest Rate">
+                            </div>
+                            <input type="range" min="1" max="100" class="w-75">
+                        </div>
+                        <div class="mb-3 w-100">
+                            <div class="input-group">
+                                <label class="input-group-text bg-danger text-white">Time Duration</label>
+                                <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+                                <input type="number" id="Time" placeholder="In Months">
+                            </div>
+                            <input type="range" min="1" max="360" class="w-75">
+                        </div>
+                        <div class="justify-content-center d-flex">
+                            <button class="btn btn-danger" onclick="calculation()">Calculate</button>
+                        </div>
+                    </div>
+                    <div id="right" class="shadow-lg p-3 bg-body rounded ">
+                        <h2 class="d-flex justify-content-center">Result</h2>
+                        <div class="mb-3">
+                            <label class="form-label fs-4">Monthly Interest: <span id="Monthly-Interest"
+                                    class="fs-4 fw-bold"></span></label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fs-4">Monthly Payment: <span id="Monthly-Payment"
+                                    class="fs-4 fw-bold"></span></label>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fs-4">Total Interest Cost: <span id="Interest-Cost"
+                                    class="fs-4 fw-bold"></span></label>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-warning" onclick="Reset()">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+    </div>
+    <script src="./src/index.js"></script>
+</body>
+
+</html>
